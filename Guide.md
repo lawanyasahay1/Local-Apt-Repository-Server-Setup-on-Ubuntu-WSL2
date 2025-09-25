@@ -1,4 +1,4 @@
-# Local Ubuntu Repository Setup on Ubuntu/WSL2
+# Local Ubuntu Repository Server Setup on Ubuntu/WSL2
 ## Objective
 
 Create a local APT repository to serve .deb packages via Apache2, enabling offline or controlled package installations.
