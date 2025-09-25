@@ -48,8 +48,6 @@ v
 - Source added in `/etc/apt/sources.list.d/local-repo.list`:  
 deb [trusted=yes] http://localhost:8080/ubuntu-repo ./
 
-markdown
-Copy code
 - `trusted=yes` avoids needing GPG keys.  
 - Translations disabled to prevent warnings:  
 ```bash
