@@ -1,5 +1,3 @@
-# Local Ubuntu Repository Setup on Ubuntu/WSL2
-
 ## 1. Repository Directory Creation
 I created a repository directory at: /var/www/html/ubuntu-repo
  
@@ -76,43 +74,43 @@ sudo apt install --reinstall cowsay Works.
 ```
 
 ## 8. Issues I Encountered :
-   
-```
-Packages.gz: Permission denied
-```
-This happened because the output file was redirected in a folder owned by www-data.
 
-I fixed it using sudo tee or sudo sh -c.
 
-## APT 404 warnings during apt update
+1. Packages.gz: Permission denied
 
-```
-Err:3 http://localhost:8080/ubuntu-repo ./ Packages
-  404  Not Found [IP: 127.0.0.1 8080]
-```
-This is a common minor warning when APT tries to fetch translations or metadata.
+ This happened because the output file was redirected in a folder owned by www-data.
 
-It doesn’t mean my repo is broken.
+ I fixed it using sudo tee or sudo sh -c.
 
-My repo is working because:
+2. APT 404 warnings during apt update
 
-```
-Packages.gz exists.
-```
+ ```
+ Err:3 http://localhost:8080/ubuntu-repo ./ Packages
+   404  Not Found [IP: 127.0.0.1 8080]
+ ```
+ This is a common minor warning when APT tries to fetch translations or metadata.
 
-curl shows the package names.
+ It doesn’t mean my repo is broken.
 
-Installing cowsay from my repo works.
+ My repo is working because:
 
-Repeated reinstalling of cowsay
+ ```
+  Packages.gz exists.
+ ```
+
+ curl shows the package names.
+
+ Installing cowsay from my repo works.
+
+3. Repeated reinstalling of cowsay
 I did this unnecessarily. My local repo was already recognized.
 
 ### Conclusion
-I successfully created a working local APT repository on Ubuntu/WSL2.
+- I successfully created a working local APT repository on Ubuntu/WSL2.
 
-The repo serves cowsay, figlet, and sl packages.
+- The repo serves cowsay, figlet, and sl packages.
 
-Apache is running and the repository is accessible.
+- Apache is running and the repository is accessible.
 
-APT warnings (like 404) are mostly harmless in this setup.
+- APT warnings (like 404) are mostly harmless in this setup.
 
