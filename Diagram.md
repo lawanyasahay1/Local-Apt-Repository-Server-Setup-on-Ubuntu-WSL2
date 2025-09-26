@@ -1,7 +1,7 @@
 ## Local APT Repository Setup Diagram
 ```
 +-----------------------------+
-| /var/www/html/ubuntu-repo | <-- My repo directory
+| /var/www/html/ubuntu-repo   | <-- My repo directory
 |-----------------------------|
 | cowsay_3.03.deb             |
 | figlet_2.2.5.deb            |
